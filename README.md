@@ -32,26 +32,26 @@ Backend: https://my-portfolio-backend-q9yh.onrender.com/
 # Project Structure
 
 # ArifPortfolio/
-#  frontend/   # React app (Vite)
-#  backend/    # Node.js/Express API
+  frontend/   # React app (Vite)
+  backend/    # Node.js/Express API
 
 # Setup
 #  Backend
 Go to backend/
 Install dependencies:
-  # npm install
+   npm install
 
 Create a .env file with:
 
      SMTP_HOST=your_smtp_host
-   SMTP_PORT=587
-   EMAIL_USER=your_email
-   EMAIL_PASS=your_password
-   EMAIL_RECEIVER=receiver_email
-   PORT=5000 (or) any port you want 
+     SMTP_PORT=587
+     EMAIL_USER=your_email
+     EMAIL_PASS=your_password
+     EMAIL_RECEIVER=receiver_email
+     PORT=5000 (or) any port you want 
    
 Start the backend:
- #  npm run dev
+   npm run dev
 
 The backend runs on : http://localhost:5000
 
@@ -59,13 +59,13 @@ The backend runs on : http://localhost:5000
 Go to frontend/
 
 Install dependencies:
-  # npm install
+   npm install
   
 Create a .env.production file with:
    VITE_API_BASE_URL=https://my-portfolio-backend-q9yh.onrender.com  (This is used for deployment)
 
 Start the frontend (for local dev):
-# npm run dev
+ npm run dev
 
 The frontend runs on http://localhost:3000
 
