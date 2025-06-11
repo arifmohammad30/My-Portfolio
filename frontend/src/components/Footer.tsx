@@ -92,7 +92,7 @@ export default function Footer() {
             © {currentYear} Mohammad Arif. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm">
-            Designed & Built with <span className="text-red-500">❤</span> using React & Tailwind
+            Designed & Built with <span className="text-red-500">❤</span>
           </p>
         </div>
       </div>
