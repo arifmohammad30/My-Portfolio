@@ -19,7 +19,7 @@ export default function ProjectsSection() {
     {
       title: "Portfolio Website",
       description: "My personal portfolio website built with React and Tailwind CSS. Features responsive design, animation effects, and showcases my projects and skills.",
-      image: "public/Screenshot 2025-06-10 202020.png",
+      image: "/Screenshot 2025-06-10 202020.png",
       tags: ["React", "TailwindCSS", "JavaScript"],
       repoLink: "https://github.com/arifmohammad30/portfolio-website",
       demoLink: "https://arifmohammad.dev"
@@ -27,7 +27,7 @@ export default function ProjectsSection() {
     {
       title:"BLOG-HUB",
       description:"Built a simple blog post application  using Express.js REST APIs and EJS templating engine for views. It allows users to view, create, edit, and delete blog posts",
-      image:"public/Screenshot 2025-06-01 123931.png",
+      image:"/Screenshot 2025-06-01 123931.png",
       tags:["EJS","CSS","Java Script"],
       repoLink:"https://github.com/arifmohammad30/BLOG-APP.git",
       demoLink:"https://blog-app-c8lp.onrender.com/posts"
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
      {
       title:"Quizz-App",
       description:"Built a responsive, interactive quiz application built with React and TypeScript that offers multiple subject categories and provides instant feedback.",
-      image:"public/annie-spratt-ZsWaYLImZFs-unsplash.jpg",
+      image:"/annie-spratt-ZsWaYLImZFs-unsplash.jpg",
       tags:["Html","React","Type Script","Java Script","CSS"],
       repoLink:"https://github.com/arifmohammad30/quiz-app.git",
       demoLink:"https://arifmohammad30.github.io/quiz-app/"

@@ -71,7 +71,7 @@ export default function HeroSection() {
           <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500/20">
               <img 
-                src="public/portfolioimg.jpg" 
+                src="/portfolioimg.jpg" 
                 alt="Arif Mohammad profile picture" 
                 className="w-full h-full object-cover" 
               />
