@@ -1,8 +1,6 @@
 // email.ts
 import nodemailer from "nodemailer";
 
-
-
 type EmailPayload = {
   name: string;
   email: string;
@@ -24,7 +22,7 @@ export async function sendEmail({ name, email, subject, message }: EmailPayload)
   const transporter = nodemailer.createTransport({
     host: smtpHost,
     port: smtpPort,
-    secure: smtpPort === 465, // true for 465, false for other ports
+    secure: smtpPort === 465,
     auth: {
       user: smtpUser,
       pass: smtpPass,
@@ -32,10 +30,17 @@ export async function sendEmail({ name, email, subject, message }: EmailPayload)
   });
 
   const mailOptions = {
-    from: `"${name}" <${email}>`,
+    from: `"${name}" <${smtpUser}>`, 
     to: emailReceiver,
     subject: subject,
-    text: message,
+    replyTo: email,
+    html: `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+    `,
   };
 
   try {

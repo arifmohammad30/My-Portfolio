@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
@@ -11,12 +11,12 @@ export default function ContactSection() {
     subject: "",
     message: ""
   });
-  
+
   // Form status states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  
+
   // Form validation state
   const [errors, setErrors] = useState({
     name: "",
@@ -24,7 +24,17 @@ export default function ContactSection() {
     subject: "",
     message: ""
   });
-  
+
+  // Auto-hide success message after 3 seconds
+  useEffect(() => {
+    if (submitSuccess) {
+      const timer = setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitSuccess]);
+
   // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -32,7 +42,7 @@ export default function ContactSection() {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user types
     if (errors[name as keyof typeof errors]) {
       setErrors(prev => ({
@@ -41,7 +51,7 @@ export default function ContactSection() {
       }));
     }
   };
-  
+
   // Validate form
   const validateForm = () => {
     let isValid = true;
@@ -51,14 +61,12 @@ export default function ContactSection() {
       subject: "",
       message: ""
     };
-    
-    // Name validation
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
       isValid = false;
     }
-    
-    // Email validation
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
       isValid = false;
@@ -66,41 +74,35 @@ export default function ContactSection() {
       newErrors.email = "Email is invalid";
       isValid = false;
     }
-    
-    // Subject validation
+
     if (!formData.subject.trim()) {
       newErrors.subject = "Subject is required";
       isValid = false;
     }
-    
-    // Message validation
+
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
       isValid = false;
     }
-    
+
     setErrors(newErrors);
     return isValid;
   };
-  
+
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Reset status
+
     setSubmitSuccess(false);
     setSubmitError("");
-    
-    // Validate form
+
     if (!validateForm()) {
       return;
     }
-    
-    // Set submitting state
+
     setIsSubmitting(true);
-    
+
     try {
-      // Send data to the backend API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -108,26 +110,24 @@ export default function ContactSection() {
         },
         body: JSON.stringify(formData),
       });
-      
+
       const data = await response.json();
-      
+
       if (!response.ok) {
         throw new Error(data.message || 'Failed to send message');
       }
-      
+
       console.log("Form submitted successfully:", data);
-      
-      // Reset form on success
+
+      // Reset form and show success message
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: ""
       });
-      
-      // Show success message
       setSubmitSuccess(true);
-      
+
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitError(error instanceof Error ? error.message : "There was a problem submitting your message. Please try again.");
@@ -141,21 +141,21 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-white text-center mb-8">Contact Me</h2>
         <div className="max-w-2xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-          
+
           {/* Success Message */}
           {submitSuccess && (
-            <div className="mb-6 p-4 bg-green-500/20 border border-green-500 text-green-500 rounded-md">
+            <div className="mb-6 p-4 bg-green-500/20 border border-green-500 text-green-500 rounded-md transition-opacity duration-500 ease-in-out">
               Message sent successfully! I'll get back to you soon.
             </div>
           )}
-          
+
           {/* Error Message */}
           {submitError && (
-            <div className="mb-6 p-4 bg-red-500/20 border border-red-500 text-red-500 rounded-md">
+            <div className="mb-6 p-4 bg-red-500/20 border border-red-500 text-red-500 rounded-md transition-opacity duration-500 ease-in-out">
               {submitError}
             </div>
           )}
-          
+
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name Field */}
@@ -173,7 +173,7 @@ export default function ContactSection() {
               />
               {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
             </div>
-            
+
             {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
@@ -190,7 +190,7 @@ export default function ContactSection() {
               />
               {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
             </div>
-            
+
             {/* Subject Field */}
             <div>
               <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
@@ -206,7 +206,7 @@ export default function ContactSection() {
               />
               {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
             </div>
-            
+
             {/* Message Field */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
@@ -223,7 +223,7 @@ export default function ContactSection() {
               />
               {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
             </div>
-            
+
             {/* Submit Button */}
             <Button
               type="submit"
