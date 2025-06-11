@@ -21,8 +21,8 @@ export default function ProjectsSection() {
       description: "My personal portfolio website built with React and Tailwind CSS. Features responsive design, animation effects, and showcases my projects and skills.",
       image: "/Screenshot 2025-06-10 202020.png",
       tags: ["React", "TailwindCSS", "JavaScript"],
-      repoLink: "https://github.com/arifmohammad30/portfolio-website",
-      demoLink: "https://arifmohammad.dev"
+      repoLink: "https://github.com/arifmohammad30/My-Portfolio",
+      demoLink: "https://arifmohdportfolio.netlify.app/"
     },
     {
       title:"BLOG-HUB",
