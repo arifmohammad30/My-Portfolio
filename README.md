@@ -31,15 +31,15 @@ Backend: https://my-portfolio-backend-q9yh.onrender.com/
 
 # Project Structure
 
-# ArifPortfolio/
+  ArifPortfolio/
   frontend/   # React app (Vite)
   backend/    # Node.js/Express API
 
 # Setup
-#  Backend
-Go to backend/
-Install dependencies:
-   npm install
+# Backend
+  Go to backend/
+  Install dependencies:
+  npm install
 
 Create a .env file with:
 
@@ -56,18 +56,18 @@ Start the backend:
 The backend runs on : http://localhost:5000
 
 # Frontend
-Go to frontend/
+  Go to frontend/
 
-Install dependencies:
-   npm install
+  Install dependencies:
+    npm install
   
-Create a .env.production file with:
-   VITE_API_BASE_URL=https://my-portfolio-backend-q9yh.onrender.com  (This is used for deployment)
+Create a .env.production file with  (This is used for deployment):
+    VITE_API_BASE_URL=https://my-portfolio-backend-q9yh.onrender.com 
 
-Start the frontend (for local dev):
- npm run dev
+ Start the frontend (for local dev):
+   npm run dev
 
-The frontend runs on http://localhost:3000
+The frontend runs on:  http://localhost:3000
 
 # Deployment
 # Backend (Render)
@@ -97,6 +97,6 @@ The frontend runs on http://localhost:3000
   
 
 # License
-# This project is licensed under the MIT License.
+ This project is licensed under the MIT License.
 
   
