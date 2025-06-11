@@ -3,6 +3,9 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
 export default function ContactSection() {
   // Form state
   const [formData, setFormData] = useState({
@@ -103,7 +106,8 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
