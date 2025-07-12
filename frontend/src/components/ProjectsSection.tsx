@@ -20,7 +20,7 @@ export default function ProjectsSection() {
       title: "OrbitBot-AI Assistant",
       description: "OrbitBot is a full-stack AI-powered assistant for ISRO's MOSDAC (Meteorological and Oceanographic Satellite Data Archival Center) portal it is a part of Bharatiya Antariksh Hackathon 2025 conducted by @ISRO .",
       tags: ["React", "TailwindCSS", "Langchan" ,"Python"],
-      image: "public/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
+      image: "/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
       repoLink: "https://github.com/arifmohammad30/OrbitBot.git",
       demoLink: "https://orbit-bot.vercel.app/"
     },
