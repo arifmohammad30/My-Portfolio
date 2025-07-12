@@ -17,6 +17,14 @@ export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
   const projects: Project[] = [
     {
+      title: "OrbitBot-AI Assistant",
+      description: "OrbitBot is a full-stack AI-powered assistant for ISRO's MOSDAC (Meteorological and Oceanographic Satellite Data Archival Center) portal it is a part of Bharatiya Antariksh Hackathon 2025 conducted by @ISRO .",
+      tags: ["React", "TailwindCSS", "Langchan" ,"Python"],
+      image: "public/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
+      repoLink: "https://github.com/arifmohammad30/OrbitBot.git",
+      demoLink: "https://orbit-bot.vercel.app/"
+    },
+    {
       title: "Portfolio Website",
       description: "My personal portfolio website built with React and Tailwind CSS. Features responsive design, animation effects, and showcases my projects and skills.",
       image: "/Screenshot 2025-06-10 202020.png",
