@@ -17,6 +17,24 @@ export default function ProjectsSection() {
   const [showAll, setShowAll] = useState(false);
   const projects: Project[] = [
     {
+      title: "News Veracity Detector",
+      description: "News Veracity Detector is an AI-powered platform that analyzes news credibility using language models, web crawling, and fact-checking APIs to deliver evidence-based scores and reports.",
+      tags:["Python 3.9+", "FastAPI", "LangChain", "OpenAI/Together AI", "React (Vite)"]      ,
+
+      image: "/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
+      repoLink: "https://github.com/arifmohammad30/news_veracity_detector",
+      demoLink: "#"
+    },
+    {
+      title: "AI-Powered Insurance Claim Adjudication System",
+      description: "AI-Powered Insurance Claim Adjudication System - Real-time document processing and intelligent claim evaluation using advanced NLP and vector search technologies.",
+      tags:["Python 3.12+", "FastAPI", "LangChain", "LanceDB", "Sentence Transformers"],
+
+      image: "/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
+      repoLink: "https://github.com/arifmohammad30/Insurance_intelligent_system",
+      demoLink: "#"
+    },
+    {
       title: "OrbitBot-AI Assistant",
       description: "OrbitBot is a full-stack AI-powered assistant for ISRO's MOSDAC (Meteorological and Oceanographic Satellite Data Archival Center) portal it is a part of Bharatiya Antariksh Hackathon 2025 conducted by @ISRO .",
       tags: ["React", "TailwindCSS", "Langchan" ,"Python"],
