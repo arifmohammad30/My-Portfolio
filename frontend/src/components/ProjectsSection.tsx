@@ -21,7 +21,7 @@ export default function ProjectsSection() {
       description: "News Veracity Detector is an AI-powered platform that analyzes news credibility using language models, web crawling, and fact-checking APIs to deliver evidence-based scores and reports.",
       tags:["Python 3.9+", "FastAPI", "LangChain", "OpenAI/Together AI", "React (Vite)"]      ,
 
-      image: "/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
+      image: "/Gemini_Generated_Image_7ff8xq7ff8xq7ff8.png",
       repoLink: "https://github.com/arifmohammad30/news_veracity_detector",
       demoLink: "#"
     },
@@ -30,7 +30,7 @@ export default function ProjectsSection() {
       description: "AI-Powered Insurance Claim Adjudication System - Real-time document processing and intelligent claim evaluation using advanced NLP and vector search technologies.",
       tags:["Python 3.12+", "FastAPI", "LangChain", "LanceDB", "Sentence Transformers"],
 
-      image: "/WhatsApp Image 2025-07-09 at 10.53.03 PM.jpeg",
+      image: "/Gemini_Generated_Image_j44uzwj44uzwj44u.png",
       repoLink: "https://github.com/arifmohammad30/Insurance_intelligent_system",
       demoLink: "#"
     },
